@@ -29,3 +29,10 @@ body {
 .inp:focus { background: #fff35c; }
 
 .tag { display: inline-block; margin-bottom: 0.25rem; padding: 0 0.4rem; background: #1a0b2e; color: #fff; font-family: var(--font-dot); font-size: 0.75rem; transform: rotate(-1.5deg); }
+
+.prog { display: flex; gap: 4px; }
+.prog-seg { flex: 1; height: 16px; border: 3px solid #1a0b2e; background: #fff; }
+.prog-seg[data-state="done"] { background: #ff2d95; }
+.prog-seg[data-state="active"] { background: repeating-linear-gradient(-45deg, #3df0ff 0 8px, #fff 8px 16px); background-size: 22.63px 22.63px; animation: prog-slide 0.6s linear infinite; }
+@keyframes prog-slide { to { background-position: 22.63px 0; } }
+@media (prefers-reduced-motion: reduce) { .prog-seg[data-state="active"] { animation: none; } }
