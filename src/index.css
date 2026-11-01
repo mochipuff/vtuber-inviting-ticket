@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Dela Gothic One", "Arial Black", sans-serif;
+  --font-dot: "DotGothic16", ui-monospace, monospace;
+  --font-body: "Zen Maru Gothic", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #1a0b2e;
+  background-color: #fff7e6;
+  background-image: radial-gradient(#ff2d9533 1.5px, transparent 2px), radial-gradient(#3df0ff66 1.5px, transparent 2px);
+  background-size: 22px 22px;
+  background-position: 0 0, 11px 11px;
+}
+
+.panel { border: 3px solid #1a0b2e; background: #fff; box-shadow: 6px 6px 0 #1a0b2e; padding: 1rem; }
+.panel:nth-of-type(even) { transform: rotate(0.4deg); }
+.checker { background-image: conic-gradient(#e2e2e2 25%, #fff 0 50%, #e2e2e2 0 75%, #fff 0); background-size: 20px 20px; }
+
+.btn { border: 3px solid #1a0b2e; background: #fff; font-weight: 900; box-shadow: 3px 3px 0 #1a0b2e; padding: 0.35rem 0.8rem; cursor: pointer; transition: transform 0.08s, box-shadow 0.08s; }
+.btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 #1a0b2e; }
+.btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 #1a0b2e; }
+.btn[aria-pressed="true"] { background: #ff2d95; color: #fff; }
+.btn:disabled { opacity: 0.5; cursor: wait; }
+
+.inp { width: 100%; border: 3px solid #1a0b2e; background: #fffdf5; padding: 0.35rem 0.6rem; font-weight: 700; outline: none; }
+.inp:focus { background: #fff35c; }
+
+.tag { display: inline-block; margin-bottom: 0.25rem; padding: 0 0.4rem; background: #1a0b2e; color: #fff; font-family: var(--font-dot); font-size: 0.75rem; transform: rotate(-1.5deg); }
