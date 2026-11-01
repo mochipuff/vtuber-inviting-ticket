@@ -7,9 +7,11 @@ import zen900Font from '@fontsource/zen-maru-gothic/files/zen-maru-gothic-latin-
 
 export type TicketKind = 'debut' | 'redebut' | 'anniversary' | 'birthday'
 export type PatternId = 'dots' | 'stripes' | 'checker' | 'none'
+export type ThemeId = 'pop' | 'celestial'
 type IconId = 'star' | 'spark' | 'crown' | 'heart' | 'play'
 
 export interface TicketData {
+  theme: ThemeId
   kind: TicketKind
   title: string
   vtuber: string
@@ -20,10 +22,12 @@ export interface TicketData {
   time: string
   tz: string
   place: string
+  channel: string
   url: string
   qrLabel: string
   no: string
   paletteId: string
+  sky: string
   pattern: PatternId
   image: string
   zoom: number
@@ -44,7 +48,7 @@ export const KINDS: Record<TicketKind, { label: string; title: string; stamp: st
 
 // Fonts are bundled (latin subset) and inlined as data URLs. The same CSS is used by the page and by the PNG/WebP
 // export, so the saved image can never fall back to a different font than the preview (no network, no CORS).
-const face = (family: string, weight: number, src: string) =>
+export const face = (family: string, weight: number, src: string) =>
   `@font-face{font-family:'${family}';font-style:normal;font-weight:${weight};font-display:block;src:url(${src}) format('woff2')}`
 
 export const FONT_CSS = [
